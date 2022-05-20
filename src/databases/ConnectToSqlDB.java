@@ -157,7 +157,7 @@ public class ConnectToSqlDB {
         User user = null;
         try{
             Connection conn = connectToSqlDatabase();
-            String query = "SELECT * FROM Students";
+            String query = "SELECT * FROM Student";
             // create the java statement
             Statement st = conn.createStatement();
             // execute the query, and get a java resultset
@@ -165,7 +165,7 @@ public class ConnectToSqlDB {
             // iterate through the java resultset
             while (rs.next())
             {
-                String name = rs.getString("stName");
+                String name = rs.getString("Name");
                 String id = rs.getString("stID");
                 String dob = rs.getString("stDOB");
                 //System.out.format("%s, %s\n", name, id);
@@ -182,15 +182,15 @@ public class ConnectToSqlDB {
     }
 
     public static void main(String[] args) throws Exception {
-//        List<User> list = readUserProfileFromSqlTable();
-//        for(User user:list){
-//            System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
-//        }
-//        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
-//        List<String> students = connectToSqlDB.readDataBase("student", "name");
-//        for (String student: students){
-//            System.out.println(student);
-//        }
+List<User> list = readUserProfileFromSqlTable();
+        for(User user:list){
+           System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
+        }
+        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
+        List<String> students = connectToSqlDB.readDataBase("Student", "name");
+        for (String student: students){
+            System.out.println(student);
+        }
 
 
     }
