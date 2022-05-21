@@ -31,15 +31,6 @@ public class UnitTestingStringProblem {
 
 
     // Test Duplicate Words
-    @Test
-    public void testDuplicateWord() {
-        String st = "Java is a programming Language. Java is also an Island of Indonesia. Java is widely used language";
-
-        Map<Integer, String> hm = new HashMap<>();
-        String expectedResult = hm.put(11, "programming");
-        Map<Integer, String> actualResult = DetermineLargestWord.findTheLargestWord(st);
-        Assert.assertEquals("Test Fail", expectedResult, actualResult);
-    }
     // Test Palindrome
     @Test
     public void testPermutation() {
